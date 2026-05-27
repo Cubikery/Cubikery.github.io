@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Staff Locator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+
+  <div class="login-overlay" id="login-overlay">
+    <form class="login-card" id="login-form" autocomplete="off">
+      <h1>Admin Sign-in</h1>
+      <p class="login-sub">JPC staff only.</p>
+      <label class="field">
+        <span>Username</span>
+        <input type="text" id="login-user" required autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="login-pass" required autocomplete="off">
+      </label>
+      <div class="login-error" id="login-error" hidden>Incorrect username or password.</div>
+      <button type="submit" class="btn btn-primary btn-large">Sign in</button>
+      <p class="login-hint">Demo: <code>admin</code> / <code>jpc</code></p>
+    </form>
+  </div>
+
+  <header class="top-bar admin-bar" hidden id="admin-bar">
+    <div class="brand">
+      <h1>Admin Panel</h1>
+      <p class="brand-sub">Mark teachers absent for today</p>
+    </div>
+    <div class="top-actions">
+      <a class="btn btn-secondary" href="public.html">Back to public view</a>
+      <button class="btn btn-ghost" id="logout-btn">Sign out</button>
+    </div>
+  </header>
+
+  <main class="layout admin-layout" hidden id="admin-main">
+    <section class="panel-left" aria-label="All teachers">
+      <div class="panel-head">
+        <h2>Teachers</h2>
+      </div>
+      <ul class="faculty-list" id="teacher-list" role="list"></ul>
+    </section>
+
+    <section class="panel-centre admin-centre">
+      <div class="drop-zone-admin" id="absent-drop">
+        <div>
+          <p class="drop-zone-title">Mark Absent</p>
+          <p class="drop-zone-hint">Drag a teacher here, or use the buttons in the list.</p>
+        </div>
+      </div>
+
+      <div class="admin-add-section">
+        <h2 class="admin-section-heading">Add Teacher</h2>
+        <form id="add-teacher-form" class="add-teacher-form" autocomplete="off">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" id="new-name" placeholder="e.g. Mr Jones" required>
+          </label>
+          <label class="field">
+            <span>Subject</span>
+            <input type="text" id="new-subject" placeholder="e.g. Chemistry" required>
+          </label>
+          <button type="submit" class="btn btn-primary">Add Teacher</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
