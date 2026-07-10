@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Welcome back</h1>
+            <p>Sign in to manage staff status</p>
+        </div>
+
+        <!-- Error message display -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <form id="loginForm">
+            <div class="form-div">
+                <span>Username</span>
+                <input type="text" id="username" placeholder="Enter your username" autocomplete="username">
+            </div>
+
+            <div class="form-div">
+                <span>Password</span>
+                <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+            </div>
+
+            <button type="submit" id="signBtn" class="signin-btn">Sign in</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>John Paul School</p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
